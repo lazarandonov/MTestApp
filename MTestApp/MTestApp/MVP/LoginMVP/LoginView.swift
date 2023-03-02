@@ -62,6 +62,7 @@ extension LoginView {
         passwordTextField.textAlignment = .left
         passwordTextField.textColor = .black
         passwordTextField.borderStyle = .none
+        passwordTextField.isSecureTextEntry = true
         passwordTextField.attributedPlaceholder = NSAttributedString(
             string: "Password",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]

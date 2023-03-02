@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SplashViewController: UIViewController {
+class SplashViewController: BaseViewController {
     
     // MARK: - Properties
     var splashView: SplashView {
@@ -44,8 +44,8 @@ extension SplashViewController {
 
 // MARK: - SplashPresenterDelegate
 extension SplashViewController: SplashPresenterDelegate {
-    func splashPresenter(_ presenter: SplashPresenter, didLoginWithUser user: String) {
-        
+    func splashPresenter(_ presenter: SplashPresenter, didLoginWithUser user: User) {
+        // handle flow logic for logged in user
     }
     
     func splashPresenterDidntLoginWithUser(_ presenter: SplashPresenter) {
@@ -54,7 +54,7 @@ extension SplashViewController: SplashPresenterDelegate {
               let appDelegate = UIApplication.shared.delegate as? AppDelegate,
               let window = appDelegate.window
             else { return }
-        
+        loginViewController.presenter = LoginPresenter()
         window.rootViewController = loginViewController
         window.makeKeyAndVisible()
     }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
     
     // MARK: - Properties
     var loginView: LoginView {
@@ -31,9 +31,29 @@ extension LoginViewController {
     private func setup() {
         loginView.setup()
         setupDelegates()
+        setupTargets()
     }
     
     private func setupDelegates() {
-        
+        presenter?.delegate = self
     }
+    
+    private func setupTargets() {
+        loginView.signInButton.addTarget(self, action: #selector(signInButtonHandler), for: .touchUpInside)
+    }
+}
+
+// MARK: - Private Targets
+extension LoginViewController {
+    @objc private func signInButtonHandler() {
+        let email = loginView.emailTextField.text ?? ""
+        let password = loginView.passwordTextField.text ?? ""
+        let model = LoginRequestModel(email: email, password: password)
+        presenter?.login(model)
+    }
+}
+
+// MARK: - LoginPresenterDelegate
+extension LoginViewController: LoginPresenterDelegate {
+    
 }

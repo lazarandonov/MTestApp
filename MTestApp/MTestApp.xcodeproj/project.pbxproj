@@ -20,6 +20,13 @@
 		380B4B3429B09BC7006608BF /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B4B3329B09BC7006608BF /* LoginPresenter.swift */; };
 		380B4B3629B09E0F006608BF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 380B4B3529B09E0F006608BF /* Login.storyboard */; };
 		380B4B3829B09EA3006608BF /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B4B3729B09EA3006608BF /* CustomLabel.swift */; };
+		380B4B3C29B0A772006608BF /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B4B3B29B0A772006608BF /* API.swift */; };
+		380B4B4229B0A7F4006608BF /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B4B4129B0A7F4006608BF /* Constans.swift */; };
+		380B4B4529B0B7C8006608BF /* LoginRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B4B4429B0B7C8006608BF /* LoginRequestModel.swift */; };
+		380B4B4929B0B818006608BF /* BaseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B4B4829B0B818006608BF /* BaseDelegate.swift */; };
+		380B4B4B29B0B878006608BF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B4B4A29B0B878006608BF /* BaseViewController.swift */; };
+		382EC45829B0E58E00DC4486 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382EC45729B0E58E00DC4486 /* ActivityIndicatorView.swift */; };
+		382EC45B29B0E72500DC4486 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382EC45A29B0E72500DC4486 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +45,13 @@
 		380B4B3329B09BC7006608BF /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		380B4B3529B09E0F006608BF /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		380B4B3729B09EA3006608BF /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		380B4B3B29B0A772006608BF /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		380B4B4129B0A7F4006608BF /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
+		380B4B4429B0B7C8006608BF /* LoginRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestModel.swift; sourceTree = "<group>"; };
+		380B4B4829B0B818006608BF /* BaseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDelegate.swift; sourceTree = "<group>"; };
+		380B4B4A29B0B878006608BF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		382EC45729B0E58E00DC4486 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		382EC45A29B0E72500DC4486 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +87,9 @@
 				380B4B1D29B09750006608BF /* AppDelegate */,
 				380B4B1F29B09765006608BF /* Misc */,
 				380B4B2029B0976D006608BF /* Assets */,
+				380B4B3D29B0A778006608BF /* API */,
+				380B4B4629B0B7D7006608BF /* Models */,
+				380B4B4329B0A7F9006608BF /* Config */,
 				380B4B2D29B09A6A006608BF /* Helpers */,
 				380B4B1E29B09759006608BF /* Storyboards */,
 				380B4B3929B09EA9006608BF /* CustomViews */,
@@ -156,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				380B4B3A29B09EB0006608BF /* Label */,
+				382EC45929B0E71B00DC4486 /* Views */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -166,6 +184,49 @@
 				380B4B3729B09EA3006608BF /* CustomLabel.swift */,
 			);
 			path = Label;
+			sourceTree = "<group>";
+		};
+		380B4B3D29B0A778006608BF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				380B4B3B29B0A772006608BF /* API.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		380B4B4329B0A7F9006608BF /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				380B4B4129B0A7F4006608BF /* Constans.swift */,
+				380B4B4829B0B818006608BF /* BaseDelegate.swift */,
+				380B4B4A29B0B878006608BF /* BaseViewController.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		380B4B4629B0B7D7006608BF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				380B4B4729B0B7DD006608BF /* Login */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		380B4B4729B0B7DD006608BF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				380B4B4429B0B7C8006608BF /* LoginRequestModel.swift */,
+				382EC45A29B0E72500DC4486 /* User.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		382EC45929B0E71B00DC4486 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				382EC45729B0E58E00DC4486 /* ActivityIndicatorView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,13 +303,20 @@
 			files = (
 				380B4B3429B09BC7006608BF /* LoginPresenter.swift in Sources */,
 				380B4B3829B09EA3006608BF /* CustomLabel.swift in Sources */,
+				380B4B4929B0B818006608BF /* BaseDelegate.swift in Sources */,
+				380B4B4229B0A7F4006608BF /* Constans.swift in Sources */,
+				382EC45B29B0E72500DC4486 /* User.swift in Sources */,
 				380B4B2F29B09BA1006608BF /* LoginViewController.swift in Sources */,
+				380B4B4B29B0B878006608BF /* BaseViewController.swift in Sources */,
+				382EC45829B0E58E00DC4486 /* ActivityIndicatorView.swift in Sources */,
 				380B4B3229B09BBC006608BF /* LoginView.swift in Sources */,
 				380B4B2229B09864006608BF /* SplashViewController.swift in Sources */,
 				380B4B0A29B096A9006608BF /* AppDelegate.swift in Sources */,
 				380B4B2829B09954006608BF /* SplashView.swift in Sources */,
 				380B4B2A29B0995E006608BF /* SplashPresenter.swift in Sources */,
+				380B4B4529B0B7C8006608BF /* LoginRequestModel.swift in Sources */,
 				380B4B2C29B09A5E006608BF /* DataBaseHelper.swift in Sources */,
+				380B4B3C29B0A772006608BF /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

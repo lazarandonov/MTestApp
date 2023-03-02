@@ -7,8 +7,8 @@
 
 import Foundation
 
-protocol SplashPresenterDelegate: AnyObject {
-    func splashPresenter(_ presenter: SplashPresenter, didLoginWithUser user: String)
+protocol SplashPresenterDelegate: BaseDelegate {
+    func splashPresenter(_ presenter: SplashPresenter, didLoginWithUser user: User)
     func splashPresenterDidntLoginWithUser(_ presenter: SplashPresenter)
     
 }
@@ -20,6 +20,11 @@ class SplashPresenter {
     
     // MARK: - Methods
     func checkIfUserIsLoggedIn() {
-        delegate?.splashPresenterDidntLoginWithUser(self)
+        if let user = DataBaseHelper.getUser() {
+            delegate?.splashPresenter(self, didLoginWithUser: user)
+        } else {
+            delegate?.splashPresenterDidntLoginWithUser(self)
+        }
+        
     }
 }
