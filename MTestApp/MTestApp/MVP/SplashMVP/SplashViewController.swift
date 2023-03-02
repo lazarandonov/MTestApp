@@ -49,6 +49,13 @@ extension SplashViewController: SplashPresenterDelegate {
     }
     
     func splashPresenterDidntLoginWithUser(_ presenter: SplashPresenter) {
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        guard let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController,
+              let appDelegate = UIApplication.shared.delegate as? AppDelegate,
+              let window = appDelegate.window
+            else { return }
         
+        window.rootViewController = loginViewController
+        window.makeKeyAndVisible()
     }
 }

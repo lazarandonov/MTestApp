@@ -14,6 +14,6 @@ class SplashView: UIView {
     
     // MARK: - Setup Method
     func setup() {
-        
+        imageView.image = UIImage(named: "onboarding")
     }
 }

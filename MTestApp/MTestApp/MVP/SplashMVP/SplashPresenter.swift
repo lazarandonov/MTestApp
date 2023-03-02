@@ -20,6 +20,6 @@ class SplashPresenter {
     
     // MARK: - Methods
     func checkIfUserIsLoggedIn() {
-        
+        delegate?.splashPresenterDidntLoginWithUser(self)
     }
 }
