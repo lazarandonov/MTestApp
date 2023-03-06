@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Network
 
 class BaseViewController: UIViewController {
     
@@ -16,13 +17,51 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setupNetworkListener()
     }
 
 }
 
 // MARK: - Private Methods
 extension BaseViewController {
+    private func setupNetworkListener() {
+        let monitor = NWPathMonitor()
+        
+        monitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                debugPrint("Internet connection is active")
+            } else {
+                debugPrint("No internet")
+            }
+        }
+        
+        let queue = DispatchQueue(label: "Monitor")
+        monitor.start(queue: queue)
+    }
+    
+    private func showNoInternetDialog() {
+        let alert = UIAlertController(title: "Alert",
+            message: "No Internet connection",
+            preferredStyle: .alert)
+
+        let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) in
+            guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return }
+            guard UIApplication.shared.canOpenURL(settingsURL) else { return }
+            UIApplication.shared.open(settingsURL)
+        }
+        alert.addAction(settingsAction)
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+
+        present(alert, animated: true)
+    }
+    
     private func startLoader() {
         DispatchQueue.main.async {
             self.activityIndicator.translatesAutoresizingMaskIntoConstraints = false
