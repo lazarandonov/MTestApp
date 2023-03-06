@@ -15,7 +15,11 @@ class API {
         static let listOfVenues = ""
     }
     
-    func login(_ model: LoginRequestModel) {
+    func login(
+        _ model: LoginRequestModel,
+        didLoginWithUser: @escaping ((User) -> ()),
+        didFinishWithError: @escaping ((ErrorResponse) -> ())) {
+            
         guard let url = URL(string: Constans.baseURL + Endpoint.login) else { return }
         var request = URLRequest(url: url)
         request.allHTTPHeaderFields = [
@@ -32,13 +36,31 @@ class API {
             
             let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
                 guard let data = data else { return }
-                print(String(data: data, encoding: .utf8)!)
+                if let response = response as? HTTPURLResponse {
+                    if response.statusCode != 200 {
+                        // handle error
+                        do {
+                            let errorModel = try JSONDecoder().decode(ErrorResponse.self, from: data)
+                            didFinishWithError(errorModel)
+                        } catch {
+                            debugPrint("❌ Error during create error model: ",error)
+                        }
+                    } else {
+                        // handle data
+                        do {
+                            let userModel = try JSONDecoder().decode(User.self, from: data)
+                            didLoginWithUser(userModel)
+                        } catch {
+                            debugPrint("❌ Error during create user model: ",error)
+                        }
+                    }
+                }
             }
 
             task.resume()
             
         } catch {
-            
+            debugPrint("❌ Error during create request: ",error)
         }
        
     }

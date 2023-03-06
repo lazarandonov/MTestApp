@@ -21,22 +21,49 @@ class BaseViewController: UIViewController {
 
 }
 
+// MARK: - Private Methods
+extension BaseViewController {
+    private func startLoader() {
+        DispatchQueue.main.async {
+            self.activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+            self.view.addSubview(self.activityIndicator)
+            NSLayoutConstraint.activate([
+                self.activityIndicator.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+                self.activityIndicator.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+                self.activityIndicator.heightAnchor.constraint(equalToConstant: 120),
+                self.activityIndicator.widthAnchor.constraint(equalToConstant: 120)
+            ])
+            self.activityIndicator.startAnimating()
+        }
+        
+    }
+    
+    private func stopLoader() {
+        self.activityIndicator.stopAnimating()
+        self.activityIndicator.removeFromSuperview()
+    }
+}
+
 // MARK: - BaseDelegate
 extension BaseViewController: BaseDelegate {
     func showLoader() {
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(activityIndicator)
-        NSLayoutConstraint.activate([
-            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            activityIndicator.heightAnchor.constraint(equalToConstant: 120),
-            activityIndicator.widthAnchor.constraint(equalToConstant: 120)
-        ])
-        activityIndicator.startAnimating()
+        self.startLoader()
     }
     
     func hideLoader() {
-        activityIndicator.stopAnimating()
-        activityIndicator.removeFromSuperview()
+        DispatchQueue.main.async {
+            self.stopLoader()
+        }
+    }
+    
+    func handleAPIError(_ error: ErrorResponse) {
+        DispatchQueue.main.async {
+            self.stopLoader()
+            let alertController = UIAlertController(title: error.data.message, message: error.data.info_message.body, preferredStyle: .alert)
+            let okAlertAction = UIAlertAction(title: "OK", style: .cancel)
+            
+            alertController.addAction(okAlertAction)
+            self.present(alertController, animated: true)
+        }
     }
 }

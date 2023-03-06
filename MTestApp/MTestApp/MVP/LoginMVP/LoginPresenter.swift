@@ -22,6 +22,13 @@ class LoginPresenter {
     // MARK: - Methods
     func login(_ model: LoginRequestModel) {
         delegate?.showLoader()
-        api.login(model)
+        api.login(model,
+           didLoginWithUser: { [weak self] (user) in
+            guard let self = self else { return }
+            self.delegate?.hideLoader()
+            
+        }, didFinishWithError: { [weak self] (error) in
+            self?.delegate?.handleAPIError(error)
+        })
     }
 }

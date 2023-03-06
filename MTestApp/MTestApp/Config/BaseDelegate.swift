@@ -10,4 +10,5 @@ import Foundation
 protocol BaseDelegate: AnyObject {
     func showLoader()
     func hideLoader()
+    func handleAPIError(_ error: ErrorResponse)
 }

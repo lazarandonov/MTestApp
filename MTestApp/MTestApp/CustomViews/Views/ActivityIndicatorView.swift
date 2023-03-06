@@ -30,11 +30,17 @@ class ActivityIndicatorView: UIView {
     
     // MARK: - Method
     func startAnimating() {
-        indicatorView.startAnimating()
+        DispatchQueue.main.async {
+            self.indicatorView.startAnimating()
+        }
+        
     }
     
     func stopAnimating() {
-        indicatorView.stopAnimating()
+        DispatchQueue.main.async {
+            self.indicatorView.stopAnimating()
+        }
+        
     }
 }
 

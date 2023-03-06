@@ -27,6 +27,7 @@
 		380B4B4B29B0B878006608BF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B4B4A29B0B878006608BF /* BaseViewController.swift */; };
 		382EC45829B0E58E00DC4486 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382EC45729B0E58E00DC4486 /* ActivityIndicatorView.swift */; };
 		382EC45B29B0E72500DC4486 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382EC45A29B0E72500DC4486 /* User.swift */; };
+		382EC45D29B5F6AD00DC4486 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382EC45C29B5F6AD00DC4486 /* ErrorResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		380B4B4A29B0B878006608BF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		382EC45729B0E58E00DC4486 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		382EC45A29B0E72500DC4486 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		382EC45C29B5F6AD00DC4486 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				380B4B4729B0B7DD006608BF /* Login */,
+				382EC45E29B5F6B600DC4486 /* Error */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -227,6 +230,14 @@
 				382EC45729B0E58E00DC4486 /* ActivityIndicatorView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		382EC45E29B5F6B600DC4486 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				382EC45C29B5F6AD00DC4486 /* ErrorResponse.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +319,7 @@
 				382EC45B29B0E72500DC4486 /* User.swift in Sources */,
 				380B4B2F29B09BA1006608BF /* LoginViewController.swift in Sources */,
 				380B4B4B29B0B878006608BF /* BaseViewController.swift in Sources */,
+				382EC45D29B5F6AD00DC4486 /* ErrorResponse.swift in Sources */,
 				382EC45829B0E58E00DC4486 /* ActivityIndicatorView.swift in Sources */,
 				380B4B3229B09BBC006608BF /* LoginView.swift in Sources */,
 				380B4B2229B09864006608BF /* SplashViewController.swift in Sources */,
