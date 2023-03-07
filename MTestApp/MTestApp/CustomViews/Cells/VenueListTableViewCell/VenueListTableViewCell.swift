@@ -27,21 +27,31 @@ class VenueListTableViewCell: UITableViewCell {
  
     // MARK: - Methods
     func configureCellWithVenue(_ venue: Venue) {
+        venueNameLabel.text = venue.venue.name
+        venueDistanceLabel.text = DistanceHelper.distanceString(for: venue.distanceInMiles)
+        venueAddressLabel.text = venue.venue.address
+        venueWorkingTimeLabel.text = venue.venue.isOpen ? "Opened" : "Closed"
         
+        venueNameLabel.textColor = venue.venue.isOpen ? .black : .lightGray
+        venueDistanceLabel.textColor = venue.venue.isOpen ? .black : .lightGray
     }
 }
 
 // MARK: - Private Methods
 extension VenueListTableViewCell {
     private func setup() {
+        selectionStyle = .none
+        
         venueNameLabel.setFontSize(to: 16, type: .bold, color: .black)
         venueNameLabel.textAlignment = .left
+        venueNameLabel.numberOfLines = 0
         
         venueDistanceLabel.setFontSize(to: 16, type: .bold, color: .black)
         venueDistanceLabel.textAlignment = .left
         
         venueAddressLabel.setFontSize(to: 16, type: .regular, color: .lightGray)
         venueAddressLabel.textAlignment = .left
+        venueAddressLabel.numberOfLines = 0
         
         venueWorkingTimeLabel.setFontSize(to: 16, type: .regular, color: .lightGray)
         venueWorkingTimeLabel.textAlignment = .left

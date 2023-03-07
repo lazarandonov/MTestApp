@@ -37,6 +37,7 @@
 		38D9A21429B74ABC00FA3F9C /* VenueListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38D9A21229B74ABC00FA3F9C /* VenueListTableViewCell.xib */; };
 		38D9A21829B74F0F00FA3F9C /* Venues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D9A21729B74F0F00FA3F9C /* Venues.swift */; };
 		38D9A21B29B74F6300FA3F9C /* VenueRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D9A21A29B74F6300FA3F9C /* VenueRequestModel.swift */; };
+		38D9A21D29B75F2E00FA3F9C /* DistanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D9A21C29B75F2E00FA3F9C /* DistanceHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		38D9A21229B74ABC00FA3F9C /* VenueListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VenueListTableViewCell.xib; sourceTree = "<group>"; };
 		38D9A21729B74F0F00FA3F9C /* Venues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venues.swift; sourceTree = "<group>"; };
 		38D9A21A29B74F6300FA3F9C /* VenueRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueRequestModel.swift; sourceTree = "<group>"; };
+		38D9A21C29B75F2E00FA3F9C /* DistanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				380B4B2B29B09A5E006608BF /* DataBaseHelper.swift */,
+				38D9A21C29B75F2E00FA3F9C /* DistanceHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				38D9A21B29B74F6300FA3F9C /* VenueRequestModel.swift in Sources */,
 				380B4B0A29B096A9006608BF /* AppDelegate.swift in Sources */,
 				380B4B2829B09954006608BF /* SplashView.swift in Sources */,
+				38D9A21D29B75F2E00FA3F9C /* DistanceHelper.swift in Sources */,
 				380B4B2A29B0995E006608BF /* SplashPresenter.swift in Sources */,
 				380B4B4529B0B7C8006608BF /* LoginRequestModel.swift in Sources */,
 				380B4B2C29B09A5E006608BF /* DataBaseHelper.swift in Sources */,

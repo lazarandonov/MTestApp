@@ -32,6 +32,6 @@ extension VenueListView {
         let cellNib = UINib(nibName: VenueListTableViewCell.cellIdentifier, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: VenueListTableViewCell.cellIdentifier)
         tableView.separatorStyle = .none
-        tableView.rowHeight = 200
+        tableView.rowHeight = 150
     }
 }
