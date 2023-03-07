@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SplashPresenterDelegate: BaseDelegate {
-    func splashPresenter(_ presenter: SplashPresenter, didLoginWithUser user: User)
+    func splashPresenter(_ presenter: SplashPresenter, didLoginWithUser user: Account)
     func splashPresenterDidntLoginWithUser(_ presenter: SplashPresenter)
     
 }

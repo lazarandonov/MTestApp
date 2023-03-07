@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ErrorResponse: Codable {
+struct ErrorResponse: Codable, DefaultServerResponse {
     var status: String
     var code: Int
     var data: ErrorResponseData

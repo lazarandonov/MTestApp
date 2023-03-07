@@ -44,8 +44,16 @@ extension SplashViewController {
 
 // MARK: - SplashPresenterDelegate
 extension SplashViewController: SplashPresenterDelegate {
-    func splashPresenter(_ presenter: SplashPresenter, didLoginWithUser user: User) {
-        // handle flow logic for logged in user
+    func splashPresenter(_ presenter: SplashPresenter, didLoginWithUser user: Account) {
+        let storyboard = UIStoryboard(name: "Venue", bundle: nil)
+        guard let venueListViewController = storyboard
+            .instantiateViewController(withIdentifier: "VenueListViewController") as? VenueListViewController,
+              let appDelegate = UIApplication.shared.delegate as? AppDelegate,
+              let window = appDelegate.window else { return }
+        
+        venueListViewController.presenter = VenueListPresenter(token: user.token.value)
+        window.rootViewController = venueListViewController
+        window.makeKeyAndVisible()
     }
     
     func splashPresenterDidntLoginWithUser(_ presenter: SplashPresenter) {

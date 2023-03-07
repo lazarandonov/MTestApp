@@ -55,5 +55,17 @@ extension LoginViewController {
 
 // MARK: - LoginPresenterDelegate
 extension LoginViewController: LoginPresenterDelegate {
-    
+    func loginPresenter(_ presenter: LoginPresenter, didLoginWithUser user: CustomerAccount, andToken token: Token) {
+        DispatchQueue.main.async {
+            let storyboard = UIStoryboard(name: "Venue", bundle: nil)
+            guard let venueListViewController = storyboard
+                .instantiateViewController(withIdentifier: "VenueListViewController") as? VenueListViewController,
+                  let appDelegate = UIApplication.shared.delegate as? AppDelegate,
+                  let window = appDelegate.window else { return }
+            
+            venueListViewController.presenter = VenueListPresenter(token: token.value)
+            window.rootViewController = venueListViewController
+            window.makeKeyAndVisible()
+        }
+    }
 }

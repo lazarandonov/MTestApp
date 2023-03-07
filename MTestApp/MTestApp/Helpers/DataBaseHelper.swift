@@ -17,7 +17,7 @@ private enum UserDefaultKeys: String {
 
 class DataBaseHelper {
     
-    static func saveUser(_ user: User) {
+    static func saveUser(_ user: Account) {
         do {
             let userData = try JSONEncoder().encode(user)
             UserDefaults.standard.set(userData, forKey: UserDefaultKeys.user.rawValue)
@@ -27,12 +27,12 @@ class DataBaseHelper {
         }
     }
     
-    static func getUser() -> User? {
+    static func getUser() -> Account? {
         do {
             guard let userData = UserDefaults.standard.data(forKey: UserDefaultKeys.user.rawValue) else {
                 return nil
             }
-            let user = try JSONDecoder().decode(User.self, from: userData)
+            let user = try JSONDecoder().decode(Account.self, from: userData)
             return user
         } catch {
             debugPrint(error)

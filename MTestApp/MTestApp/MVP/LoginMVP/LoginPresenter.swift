@@ -8,7 +8,7 @@
 import Foundation
 
 protocol LoginPresenterDelegate: BaseDelegate {
-    
+    func loginPresenter(_ presenter: LoginPresenter, didLoginWithUser user: CustomerAccount, andToken token: Token)
 }
 
 class LoginPresenter {
@@ -26,7 +26,7 @@ class LoginPresenter {
            didLoginWithUser: { [weak self] (user) in
             guard let self = self else { return }
             self.delegate?.hideLoader()
-            
+            self.delegate?.loginPresenter(self, didLoginWithUser: user.data.customerAccount, andToken: user.data.token)
         }, didFinishWithError: { [weak self] (error) in
             self?.delegate?.handleAPIError(error)
         })
