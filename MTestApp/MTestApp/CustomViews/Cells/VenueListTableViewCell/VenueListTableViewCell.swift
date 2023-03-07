@@ -28,7 +28,7 @@ class VenueListTableViewCell: UITableViewCell {
     // MARK: - Methods
     func configureCellWithVenue(_ venue: Venue) {
         venueNameLabel.text = venue.venue.name
-        venueDistanceLabel.text = DistanceHelper.distanceString(for: venue.distanceInMiles)
+        venueDistanceLabel.text = "\(venue.distance)m"
         venueAddressLabel.text = venue.venue.address
         venueWorkingTimeLabel.text = venue.venue.isOpen ? "Opened" : "Closed"
         
