@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 class VenueDetailsView: UIView {
     
@@ -30,9 +29,8 @@ extension VenueDetailsView {
     private func setupImageViewWithVenue(_ venue: Venue?) {
         if let imageUrlString = venue?.venue.image.thumbnailMedium,
             let imageUrl = URL(string: imageUrlString) {
-            venueImageView.kf.setImage(with: imageUrl)
+            venueImageView.downloadImage(from: imageUrl)
         }
-        
     }
     
     private func setupLabelsWithVenue(_ venue: Venue?) {
