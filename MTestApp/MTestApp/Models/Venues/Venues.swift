@@ -35,9 +35,10 @@ struct VenueData: Codable {
     var description: String
     var address: String
     var isOpen: Bool
+    var image: VenueImage
     
     enum CodingKeys: String, CodingKey {
-        case id, name, code, description, address
+        case id, name, code, description, address, image
         case isOpen = "is_open"
     }
 }
@@ -45,4 +46,16 @@ struct VenueData: Codable {
 struct VenueTimeZone: Codable {
     var name: String
     var offset: String
+}
+
+struct VenueImage: Codable {
+    var thumbnailSmall: String
+    var thumbnailMedium: String
+    var fullsize: String
+    
+    enum CodingKeys: String, CodingKey {
+        case thumbnailSmall = "thumbnail_small"
+        case thumbnailMedium = "thumbnail_medium"
+        case fullsize
+    }
 }

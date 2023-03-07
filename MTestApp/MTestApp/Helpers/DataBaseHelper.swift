@@ -6,13 +6,10 @@
 //
 
 import Foundation
+import QuartzCore
 
 private enum UserDefaultKeys: String {
     case user
-    
-    static var allCases: [UserDefaultKeys] {
-        return [.user]
-    }
 }
 
 class DataBaseHelper {
@@ -38,5 +35,10 @@ class DataBaseHelper {
             debugPrint(error)
             return nil
         }
+    }
+    
+    static func removeUser() {
+        UserDefaults.standard.removeObject(forKey: UserDefaultKeys.user.rawValue)
+        UserDefaults.standard.synchronize()
     }
 }

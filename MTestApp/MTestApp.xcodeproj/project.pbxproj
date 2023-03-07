@@ -38,6 +38,10 @@
 		38D9A21829B74F0F00FA3F9C /* Venues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D9A21729B74F0F00FA3F9C /* Venues.swift */; };
 		38D9A21B29B74F6300FA3F9C /* VenueRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D9A21A29B74F6300FA3F9C /* VenueRequestModel.swift */; };
 		38D9A21D29B75F2E00FA3F9C /* DistanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D9A21C29B75F2E00FA3F9C /* DistanceHelper.swift */; };
+		38D9A21F29B761B200FA3F9C /* VenueDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D9A21E29B761B200FA3F9C /* VenueDetailsViewController.swift */; };
+		38D9A22229B761CB00FA3F9C /* VenueDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D9A22129B761CB00FA3F9C /* VenueDetailsView.swift */; };
+		38D9A22429B761D400FA3F9C /* VenueDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D9A22329B761D400FA3F9C /* VenueDetailsPresenter.swift */; };
+		38D9A22729B779F800FA3F9C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 38D9A22629B779F800FA3F9C /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +78,9 @@
 		38D9A21729B74F0F00FA3F9C /* Venues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venues.swift; sourceTree = "<group>"; };
 		38D9A21A29B74F6300FA3F9C /* VenueRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueRequestModel.swift; sourceTree = "<group>"; };
 		38D9A21C29B75F2E00FA3F9C /* DistanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceHelper.swift; sourceTree = "<group>"; };
+		38D9A21E29B761B200FA3F9C /* VenueDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsViewController.swift; sourceTree = "<group>"; };
+		38D9A22129B761CB00FA3F9C /* VenueDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsView.swift; sourceTree = "<group>"; };
+		38D9A22329B761D400FA3F9C /* VenueDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38D9A22729B779F800FA3F9C /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +169,7 @@
 				380B4B2629B09947006608BF /* SplashMVP */,
 				380B4B3029B09BA4006608BF /* LoginMVP */,
 				38D9A20C29B748AE00FA3F9C /* VenueListMVP */,
+				38D9A22029B761B400FA3F9C /* VenueDetailMVP */,
 			);
 			path = MVP;
 			sourceTree = "<group>";
@@ -310,6 +319,16 @@
 			path = Venues;
 			sourceTree = "<group>";
 		};
+		38D9A22029B761B400FA3F9C /* VenueDetailMVP */ = {
+			isa = PBXGroup;
+			children = (
+				38D9A21E29B761B200FA3F9C /* VenueDetailsViewController.swift */,
+				38D9A22129B761CB00FA3F9C /* VenueDetailsView.swift */,
+				38D9A22329B761D400FA3F9C /* VenueDetailsPresenter.swift */,
+			);
+			path = VenueDetailMVP;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -327,6 +346,7 @@
 			);
 			name = MtestApp;
 			packageProductDependencies = (
+				38D9A22629B779F800FA3F9C /* Kingfisher */,
 			);
 			productName = MtestApp;
 			productReference = 380B4B0629B096A9006608BF /* MtestApp.app */;
@@ -357,6 +377,7 @@
 			);
 			mainGroup = 380B4AFD29B096A9006608BF;
 			packageReferences = (
+				38D9A22529B779F800FA3F9C /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 380B4B0729B096A9006608BF /* Products */;
 			projectDirPath = "";
@@ -391,6 +412,7 @@
 				380B4B3429B09BC7006608BF /* LoginPresenter.swift in Sources */,
 				380B4B3829B09EA3006608BF /* CustomLabel.swift in Sources */,
 				380B4B4929B0B818006608BF /* BaseDelegate.swift in Sources */,
+				38D9A22229B761CB00FA3F9C /* VenueDetailsView.swift in Sources */,
 				380B4B4229B0A7F4006608BF /* Constans.swift in Sources */,
 				382EC45B29B0E72500DC4486 /* User.swift in Sources */,
 				38D9A21829B74F0F00FA3F9C /* Venues.swift in Sources */,
@@ -402,6 +424,7 @@
 				382EC45829B0E58E00DC4486 /* ActivityIndicatorView.swift in Sources */,
 				38D9A20629B7453600FA3F9C /* DefaultServerResponse.swift in Sources */,
 				380B4B3229B09BBC006608BF /* LoginView.swift in Sources */,
+				38D9A21F29B761B200FA3F9C /* VenueDetailsViewController.swift in Sources */,
 				380B4B2229B09864006608BF /* SplashViewController.swift in Sources */,
 				38D9A21B29B74F6300FA3F9C /* VenueRequestModel.swift in Sources */,
 				380B4B0A29B096A9006608BF /* AppDelegate.swift in Sources */,
@@ -409,6 +432,7 @@
 				38D9A21D29B75F2E00FA3F9C /* DistanceHelper.swift in Sources */,
 				380B4B2A29B0995E006608BF /* SplashPresenter.swift in Sources */,
 				380B4B4529B0B7C8006608BF /* LoginRequestModel.swift in Sources */,
+				38D9A22429B761D400FA3F9C /* VenueDetailsPresenter.swift in Sources */,
 				380B4B2C29B09A5E006608BF /* DataBaseHelper.swift in Sources */,
 				380B4B3C29B0A772006608BF /* API.swift in Sources */,
 				38D9A20B29B748AB00FA3F9C /* VenueListViewController.swift in Sources */,
@@ -624,6 +648,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		38D9A22529B779F800FA3F9C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		38D9A22629B779F800FA3F9C /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 38D9A22529B779F800FA3F9C /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 380B4AFE29B096A9006608BF /* Project object */;
 }

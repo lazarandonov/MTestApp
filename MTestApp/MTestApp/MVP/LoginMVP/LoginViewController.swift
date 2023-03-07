@@ -64,7 +64,8 @@ extension LoginViewController: LoginPresenterDelegate {
                   let window = appDelegate.window else { return }
             
             venueListViewController.presenter = VenueListPresenter(token: token.value)
-            window.rootViewController = venueListViewController
+            let navigationViewController = UINavigationController(rootViewController: venueListViewController)
+            window.rootViewController = navigationViewController
             window.makeKeyAndVisible()
         }
     }

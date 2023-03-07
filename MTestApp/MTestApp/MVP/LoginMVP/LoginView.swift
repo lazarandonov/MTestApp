@@ -70,7 +70,7 @@ extension LoginView {
     }
     
     private func setupButtons() {
-        signInButton.backgroundColor = UIColor(named: "SiginButtonBackgroundColor")
+        signInButton.backgroundColor = UIColor(named: "Orange")
         signInButton.setTitleColor(.white, for: .normal)
         signInButton.setTitle("Sign in", for: .normal)
         signInButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)

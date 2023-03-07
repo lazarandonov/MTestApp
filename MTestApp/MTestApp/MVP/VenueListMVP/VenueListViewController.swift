@@ -44,6 +44,7 @@ class VenueListViewController: BaseViewController {
 // MARK: - Private Methods
 extension VenueListViewController {
     private func setup() {
+        title = "Venues"
         venueListView.setup()
         setupDelegates()
         setupTargets()
@@ -86,7 +87,13 @@ extension VenueListViewController: VenueListPresenterDelegate {
 // MARK: - UITableViewDelegate
 extension VenueListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let venue = dataSource[indexPath.row]
         
+        let storyboard = UIStoryboard(name: "Venue", bundle: nil)
+        guard let venueDetailsViewController = storyboard
+            .instantiateViewController(withIdentifier: "VenueDetailsViewController") as? VenueDetailsViewController else { return }
+        venueDetailsViewController.presenter = VenueDetailsPresenter(venue: venue)
+        self.navigationController?.pushViewController(venueDetailsViewController, animated: true)
     }
 }
 
